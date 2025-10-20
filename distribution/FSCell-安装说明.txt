@@ -1,6 +1,9 @@
 FSCell 插件快速安装指南
 ========================
 
+感谢使用 FSCell！下载后按照以下步骤即可在 ImageJ/Fiji 中启用插件：
+
+1. 下载 `FSCell-fiji.zip`（可从项目发布页面获取，或先运行 `./scripts/create-dropin-zip.sh` 生成后再从 `distribution/` 目录取出）。
 感谢使用 FSCell！下载或构建完成后，按照以下步骤即可在 ImageJ/Fiji 中启用插件：
 
 1. 找到 Maven 构建生成的压缩包 `target/FSCell-fiji.zip`，或从发布页面下载同名文件。

@@ -2,3 +2,6 @@
 /.idea/
 *.iml
 .DS_Store
+
+# Ignore generated distribution archives
+distribution/*.zip
