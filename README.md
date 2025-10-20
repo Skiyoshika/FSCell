@@ -1,6 +1,8 @@
 # FSCell
 
-FSCell (Fluorescence SmartCell) is an ImageJ/Fiji plugin designed to remove repetitive manual work from multi-channel fluorescence microscopy analysis workflows. It automates channel balancing, overlap detection, and nuclei counting for batches of `.tif/.tiff` images with four color channels (blue, green, red, and an optional fourth marker).
+FSCell (Fluorescence SmartCell) is an ImageJ/Fiji plugin designed to automate repetitive multi-channel fluorescence microscopy workflows. It balances channels, detects red/green overlaps, and assists with nuclei counting across batches of `.tif/.tiff` images that contain four color channels (blue, green, red, and an optional marker).
+
+> Looking for the Chinese documentation? See [《读我！》](读我！.md).
 
 ## Features
 
