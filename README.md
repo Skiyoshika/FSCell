@@ -18,20 +18,30 @@ FSCell (Fluorescence SmartCell) is an ImageJ/Fiji plugin designed to automate re
 
 ## Building
 
-The project uses Maven and targets Java 8. To build the plugin JAR:
+The project uses Maven and targets Java 8. To build everything (JAR + drop-in ZIP package):
 
 ```bash
 mvn clean package
 ```
 
-The compiled artifact will appear in `target/fs-cell-0.1.0-SNAPSHOT.jar`.
+Artifacts:
+
+- `target/FSCell.jar` – the compiled plugin JAR.
+- `target/FSCell-fiji.zip` – a ready-to-use archive that can be extracted straight into your Fiji `plugins` folder.
 
 ## Installation
 
-1. Build the project or download the released JAR.
-2. Copy the JAR into your ImageJ/Fiji `plugins` directory (for Fiji this is typically `{Fiji.app}/plugins`).
-3. Copy `src/main/resources/plugins.config` into the same directory if you are installing manually. When bundling the JAR the configuration file is already included.
-4. Restart ImageJ/Fiji. You will find the plugin under **Plugins ▸ FSCell ▸ Batch Merge and Count**.
+### Quick install (recommended)
+
+1. Build the project or download `FSCell-fiji.zip` from the release page.
+2. Extract the archive directly into your ImageJ/Fiji `plugins` directory (e.g. `{Fiji.app}/plugins`). The archive expands to `plugins/FSCell/` containing the JAR, plugin registration file, and a short install guide.
+3. Restart ImageJ/Fiji. You will find the plugin under **Plugins ▸ FSCell ▸ Batch Merge and Count**.
+
+### Manual install (advanced)
+
+1. Copy `target/FSCell.jar` into your ImageJ/Fiji `plugins` directory.
+2. Ensure `plugins.config` is located alongside the JAR. When you use the Maven build this file is already included inside the JAR and also provided as `plugins/FSCell/plugins.config` in the ZIP.
+3. Restart ImageJ/Fiji.
 
 ## Usage
 
