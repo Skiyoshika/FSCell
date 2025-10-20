@@ -33,12 +33,17 @@ To rebuild the ready-to-unpack ZIP, use the helper script which collects the fre
 ```
 
 > **Note:** The generated ZIP is ignored by git, so the script must be re-run whenever you need a fresh drop-in package.
+Artifacts:
+
+- `target/FSCell.jar` – the compiled plugin JAR.
+- `target/FSCell-fiji.zip` – a ready-to-use archive that can be extracted straight into your Fiji `plugins` folder.
 
 ## Installation
 
 ### Quick install (recommended)
 
 1. Download the ready-to-use archive from the project release page, or generate it locally with `./scripts/create-dropin-zip.sh` (the script will place `FSCell-fiji.zip` in `distribution/`).
+1. Build the project or download `FSCell-fiji.zip` from the release page.
 2. Extract the archive directly into your ImageJ/Fiji `plugins` directory (e.g. `{Fiji.app}/plugins`). The archive expands to `plugins/FSCell/` containing the JAR, plugin registration file, and a short install guide.
 3. Restart ImageJ/Fiji. You will find the plugin under **Plugins ▸ FSCell ▸ Batch Merge and Count**.
 
@@ -48,6 +53,9 @@ To rebuild the ready-to-unpack ZIP, use the helper script which collects the fre
 2. Copy `FSCell.jar` into your ImageJ/Fiji `plugins` directory.
 3. Ensure `plugins.config` is located alongside the JAR. The ready-made ZIP already contains a copy at `plugins/FSCell/plugins.config`.
 4. Restart ImageJ/Fiji.
+1. Copy `target/FSCell.jar` into your ImageJ/Fiji `plugins` directory.
+2. Ensure `plugins.config` is located alongside the JAR. When you use the Maven build this file is already included inside the JAR and also provided as `plugins/FSCell/plugins.config` in the ZIP.
+3. Restart ImageJ/Fiji.
 
 ## Usage
 
