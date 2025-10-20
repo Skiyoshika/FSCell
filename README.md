@@ -24,9 +24,9 @@ Because this repository is mirrored into environments that reject binary blobs, 
 mvn clean package
 ```
 
-This creates `target/FSCell.jar` and assembles `target/FSCell-fiji.zip`.
+This creates `target/FSCell.jar`.
 
-For convenience there is also a helper script that copies the assembled ZIP into the `distribution/` directory:
+To rebuild the ready-to-unpack ZIP, use the helper script which collects the freshly built JAR, `plugins.config`, and the Chinese quick-start guide into `distribution/FSCell-fiji.zip`:
 
 ```bash
 ./scripts/create-dropin-zip.sh
