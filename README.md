@@ -16,22 +16,38 @@ FSCell (Fluorescence SmartCell) is an ImageJ/Fiji plugin designed to automate re
   - Offers a minimum area control to avoid small debris, with live updates to the overlay and count.
   - Intended for quick quality control after batch processing; every adjustment immediately refreshes the overlay.
 
-## Building
+## Building (optional)
 
-The project uses Maven and targets Java 8. To build the plugin JAR:
+Because this repository is mirrored into environments that reject binary blobs, the prebuilt Fiji drop-in archive is not checked into version control. If you modify the source or want to produce fresh artifacts yourself, run:
 
 ```bash
 mvn clean package
 ```
 
-The compiled artifact will appear in `target/fs-cell-0.1.0-SNAPSHOT.jar`.
+This creates `target/FSCell.jar` and assembles `target/FSCell-fiji.zip`.
+
+For convenience there is also a helper script that copies the assembled ZIP into the `distribution/` directory:
+
+```bash
+./scripts/create-dropin-zip.sh
+```
+
+> **Note:** The generated ZIP is ignored by git, so the script must be re-run whenever you need a fresh drop-in package.
 
 ## Installation
 
-1. Build the project or download the released JAR.
-2. Copy the JAR into your ImageJ/Fiji `plugins` directory (for Fiji this is typically `{Fiji.app}/plugins`).
-3. Copy `src/main/resources/plugins.config` into the same directory if you are installing manually. When bundling the JAR the configuration file is already included.
-4. Restart ImageJ/Fiji. You will find the plugin under **Plugins ▸ FSCell ▸ Batch Merge and Count**.
+### Quick install (recommended)
+
+1. Download the ready-to-use archive from the project release page, or generate it locally with `./scripts/create-dropin-zip.sh` (the script will place `FSCell-fiji.zip` in `distribution/`).
+2. Extract the archive directly into your ImageJ/Fiji `plugins` directory (e.g. `{Fiji.app}/plugins`). The archive expands to `plugins/FSCell/` containing the JAR, plugin registration file, and a short install guide.
+3. Restart ImageJ/Fiji. You will find the plugin under **Plugins ▸ FSCell ▸ Batch Merge and Count**.
+
+### Manual install (advanced)
+
+1. Build the project with Maven (`mvn clean package`) or compile `src/main/java` manually to produce `FSCell.jar`.
+2. Copy `FSCell.jar` into your ImageJ/Fiji `plugins` directory.
+3. Ensure `plugins.config` is located alongside the JAR. The ready-made ZIP already contains a copy at `plugins/FSCell/plugins.config`.
+4. Restart ImageJ/Fiji.
 
 ## Usage
 
